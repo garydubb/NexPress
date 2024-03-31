@@ -1,9 +1,8 @@
 import client from '@/utils/apollo/ApolloClient';
 import getMenus from '@/utils/functions/common';
+import queryGetCheckoutPage from '@/utils/queries/shop/checkout/queryGetCheckoutPage';
 
-import { queryShopHome } from '@/utils/queries/shop/queryShopHome';
-
-export default async function getShopHomePage() {
+export async function getCheckoutPage() {
   const revalidate = 1 * 1;
   // Set up return object.
   const response = {
@@ -14,18 +13,17 @@ export default async function getShopHomePage() {
 
   response.page = await client
     .query({
-      query: queryShopHome,
+      query: queryGetCheckoutPage,
     })
     .then((res) => {
-      const { menus, productCategories, products } = res.data;
+      const { menus, customer } = res.data;
 
       // Retrieve menus.
       return {
         menus: getMenus(menus),
         seo: null,
         content: {
-          productCategories: productCategories?.nodes || null,
-          products: products?.nodes || null,
+          customer: customer,
         },
         settings: null,
         postType: 'page',

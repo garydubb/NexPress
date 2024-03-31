@@ -1,11 +1,9 @@
 import { gql } from '@apollo/client';
 import { queryProductCategoriesNodes } from './category/queryProductCategories';
-import { partialShopMenus } from './menus/queryShopMenus';
 import { queryProductsListNodes } from './product/partials/QueryProductFields';
+import defaultPageData from '../settings/defaultPageData';
 
-const defaultPageData = `
-  ${partialShopMenus}
-`;
+
 
 export const queryShopHome = gql`
   query QueryShopPage {

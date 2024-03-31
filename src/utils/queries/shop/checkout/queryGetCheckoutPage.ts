@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 import cartCustomer from '../cart/partials/cartCustomer';
-import { partialShopMenus } from '../menus/queryShopMenus';
+import { partialShopMenus } from '../../menus/queryShopMenus';
 
 const defaultPageData = `
   ${partialShopMenus}

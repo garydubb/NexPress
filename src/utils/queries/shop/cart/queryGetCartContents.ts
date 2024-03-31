@@ -1,5 +1,5 @@
 import { gql } from '@apollo/client';
-import { partialShopMenus } from '../menus/queryShopMenus';
+import { partialShopMenus } from '../../menus/queryShopMenus';
 import cartConents from './partials/cartContents';
 import cartCustomer from './partials/cartCustomer';
 

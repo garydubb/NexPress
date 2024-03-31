@@ -1,5 +1,5 @@
 import { gql } from '@apollo/client';
-import { partialShopMenus } from '../menus/queryShopMenus';
+import { partialShopMenus } from '../../menus/queryShopMenus';
 import { queryProductFields } from './partials/QueryProductFields';
 
 // Query partial: retrieve default data for all frontend pages.

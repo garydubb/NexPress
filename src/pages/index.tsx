@@ -1,39 +1,24 @@
-import NexPressTheme from '@/components/themes/basic/basic.theme';
-import { GET_SETTINGS } from '@/utils/queries/settings';
+import ProductList from '@/components/themes/nexPressShop/ProductList';
+import { useAppContext } from '@/utils/context/AuthProvider';
+import ModuleHome from '@/utils/Process/Home';
 import { GetStaticProps } from 'next';
+import { useEffect } from 'react';
 
-import client from '@/utils/apollo/ApolloClient';
-import { Get_ALL_MENUS } from '@/utils/queries/menus';
-import { GET_POSTS } from '@/utils/queries/posts';
-// import types
-import { PageIndex } from '@/utils/type/pages';
+export default function Index(props: any) {
+  const { setMenus, setSeo, setSettings, setContent } = useAppContext();
+  useEffect(() => {
+    const { page } = props;
 
-export default function Index({ postsResult, settings }: PageIndex) {
-  //const allPosts = postsResult.data;
-
-  return <NexPressTheme postsResult={postsResult} settings={settings} />;
+    if (props && page) {
+      setMenus(page.menus);
+      setSeo(page.seo);
+      setSettings(page.settings);
+      setContent(page.content);
+    }
+  }, [props]);
+  return <ProductList />;
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await Promise.all([
-    client.query({ query: GET_POSTS }),
-    client.query({ query: Get_ALL_MENUS }),
-    client.query({ query: GET_SETTINGS }),
-  ]);
-
-  const [postsResult, menusResult, settingsResult] = response;
-
-  const set = {
-    menus: menusResult.data.menus,
-    generalSettings: settingsResult.data.generalSettings,
-  };
-
-  const settings = set;
-  return {
-    props: {
-      postsResult,
-      settings,
-    },
-    revalidate: 10,
-  };
+  return ModuleHome.getShopHomePage();
 };

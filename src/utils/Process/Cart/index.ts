@@ -70,3 +70,18 @@ export async function queryUpdateItemCart(input) {
 
   return queryResult;
 }
+
+
+const ModuleCart = {
+  getSessionCartContent: async function () {
+    return await getSessionCartContent();
+  },
+  queryRemoveItemCart: async function (input) {
+    return await queryRemoveItemCart(input);
+  },
+  queryUpdateItemCart: async function (input) {
+    return await queryUpdateItemCart(input);
+  },
+};
+
+export default ModuleCart;

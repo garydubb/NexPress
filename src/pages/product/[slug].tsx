@@ -1,8 +1,7 @@
 import ProductPage from '@/components/themes/nexPressShop/Product';
 import { useAppContext } from '@/utils/context/AuthProvider';
 import { useShopContext } from '@/utils/context/ShopProvider';
-import getProductsStaticPaths from '@/utils/fetch/Products/getProductsStaicPaths';
-import getProductTypeStaticProps from '@/utils/fetch/Products/getProductsStaticProps';
+import Moduleproduct from '@/utils/Process/Product';
 import { useEffect } from 'react';
 
 export default function ShopProductPage({ props }: any) {
@@ -24,7 +23,7 @@ export default function ShopProductPage({ props }: any) {
 }
 
 export async function getStaticPaths() {
-  return await getProductsStaticPaths('product');
+  return await Moduleproduct.getProductsStaticPaths('product');
 }
 
 /**
@@ -39,7 +38,7 @@ export async function getStaticPaths() {
  */
 export async function getStaticProps({ params, preview, previewData }) {
   // Replace the empty array with the appropriate function call
-  const props = await getProductTypeStaticProps(
+  const props = await Moduleproduct.getProductTypeStaticProps(
     params,
     'product',
     preview,

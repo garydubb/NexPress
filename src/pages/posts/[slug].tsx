@@ -6,8 +6,8 @@ import { useRouter } from 'next/router';
 //Page Data Fetch
 import client from '@/utils/apollo/ApolloClient';
 import { Get_ALL_MENUS } from '@/utils/queries/menus';
-import { GET_POSTS_BY_SLUG_QUERY, POST_SLUGS } from '@/utils/queries/posts';
-import { GET_SETTINGS } from '@/utils/queries/settings';
+import { GET_POSTS_BY_SLUG_QUERY, POST_SLUGS } from '@/utils/queries/blog/blog';
+import { GET_SETTINGS } from '@/utils/queries/settings/querySiteSettings';
 
 //Types fetch
 import { PostsData } from '@/utils/type/posts';

@@ -1,8 +1,5 @@
-import { gql } from '@apollo/client';
 
-export const GET_SETTINGS = gql(
-  `
-    query SiteSettings {
+const querySiteSettings = `
       generalSettings {
         dateFormat
         description
@@ -14,6 +11,6 @@ export const GET_SETTINGS = gql(
         title
         url
       }
-    }
-  `,
-);
+`;
+
+export default querySiteSettings;

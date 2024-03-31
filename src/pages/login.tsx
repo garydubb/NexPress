@@ -1,4 +1,4 @@
-import { GET_SETTINGS } from '@/utils/queries/settings';
+import { GET_SETTINGS } from '@/utils/queries/settings/querySiteSettings';
 import { GetStaticProps } from 'next';
 
 import NexPressThemeLogin from '@/components/themes/basic/login.theme';
