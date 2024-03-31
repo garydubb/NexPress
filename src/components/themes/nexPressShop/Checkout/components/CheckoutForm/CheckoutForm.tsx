@@ -1,4 +1,4 @@
-import Preloader from '@/components/themes/basic/components/preloader';
+import Preloader from '@/components/Atoms/Preloader/Preloader';
 import ModuleCheckout from '@/utils/Process/Checkout';
 import { useShopContext } from '@/utils/context/ShopProvider';
 import { RadioGroup } from '@headlessui/react';

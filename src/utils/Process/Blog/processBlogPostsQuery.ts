@@ -34,22 +34,23 @@ export default async function processBlogPostsQuery(
       notFound: true,
     };
   }
-
+  
   // Execute query.
   response.page = await client
     .query({ query, variables })
     .then((res) => {
-      const {menus } = res.data;
-
+      
+      const {menus, post } = res.data;
+      
       // Retrieve menus.
       const defaultMenus = getMenus(menus);
-
+     
       // Retrieve default SEO data.
       //const defaultSeo = product?.seo;
       const pageData = {
         menus: defaultMenus,
         seo: null,
-        content: null,
+        content: post,
         settings: null,
         postType: 'post',
       };

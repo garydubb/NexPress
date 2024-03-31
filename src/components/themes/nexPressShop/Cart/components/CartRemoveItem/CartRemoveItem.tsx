@@ -1,4 +1,4 @@
-import Preloader from '@/components/themes/basic/components/preloader';
+import Preloader from '@/components/Atoms/Preloader/Preloader';
 import { queryRemoveItemCart } from '@/utils/Process/Cart';
 import { useShopContext } from '@/utils/context/ShopProvider';
 import { TrashIcon } from '@heroicons/react/24/outline';

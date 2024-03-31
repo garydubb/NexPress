@@ -4,7 +4,7 @@ import { querySetCustomerShippingAddress } from '@/utils/Process/Shipping';
 import { useShopContext } from '@/utils/context/ShopProvider';
 import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import Preloader from '../../basic/components/preloader';
+import Preloader from '../../../Atoms/Preloader/Preloader';
 import {
   AvailableShippingMethods,
   ShippingCity,

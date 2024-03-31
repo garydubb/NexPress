@@ -3,37 +3,41 @@ const StaticLinks = {
     title: 'Home',
     href: '/',
   },
+  posts: {
+    title: 'Blog',
+    href: '/blog',
+  },
   shop: {
     title: 'Shop',
-    href: '/shop',
+    href: '/',
   },
   cart: {
     title: 'Cart',
-    href: '/shop/cart',
+    href: '/cart',
   },
   checkout: {
     title: 'Checkout',
-    href: '/shop/checkout',
+    href: '/checkout',
   },
   orderReceived: {
     title: 'Order Received',
-    href: '/shop/order-received/',
+    href: '/checkout/order-received/',
   },
   thankYou: {
     title: 'Thank You',
-    href: '/shop/thank-you',
+    href: '/checkout/thank-you',
   },
   login: {
     title: 'Sign in',
-    href: '/shop/login',
+    href: '/login',
   },
   register: {
     title: 'Create account',
-    href: '/shop/register',
+    href: '/register',
   },
   account: {
     title: 'My Account',
-    href: '/shop/account',
+    href: '/account',
   },
   about: {
     title: 'About Us',

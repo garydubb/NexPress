@@ -7,14 +7,18 @@ import { AppProps } from 'next/app';
 import React from 'react';
 import '../styles/index.css';
 import '../styles/main.css';
+import Preloader from '@/components/Atoms/Preloader';
+import Meta from '@/components/themes/Common/Meta';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <React.StrictMode>
       <ApolloProvider client={client}>
         <SessionContextProvider>
-          <AppContextProvider>
+          <AppContextProvider value={pageProps}>
             <ShopProvider value={null}>
+              <Preloader />
+              <Meta />
               <Component {...pageProps} />
             </ShopProvider>
           </AppContextProvider>

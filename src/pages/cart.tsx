@@ -8,7 +8,7 @@ export default function Index(props: any) {
   const { setCart } = useShopContext();
   useEffect(() => {
     const { error, page } = props;
-
+   
     if (props && page) {
       setMenus(page.menus);
       setSeo(page.seo);

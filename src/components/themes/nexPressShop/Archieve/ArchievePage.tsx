@@ -1,7 +1,7 @@
-import Container from '@/components/themes/nexPressShop/Container';
-import NexPressFooter from '@/components/themes/nexPressShop/Footer/Footer.component';
-import NexPressCopyrightBar from '@/components/themes/nexPressShop/Footer/components/Copyright/Copyright';
-import NexPressNavbar from '@/components/themes/nexPressShop/Header/NavBar.component';
+import Container from '@/components/themes/Common/Container';
+import NexPressFooter from '@/components/themes/Common/Footer/Footer.component';
+import NexPressCopyrightBar from '@/components/themes/Common/Footer/components/Copyright/Copyright';
+import NexPressNavbar from '@/components/themes/Common/Header/NavBar.component';
 import { ArchieveContent } from './components';
 
 const ArchievePage = () => {

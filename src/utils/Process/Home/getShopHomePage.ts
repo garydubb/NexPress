@@ -2,9 +2,10 @@ import client from "@/utils/apollo/ApolloClient";
 import getMenus from "@/utils/functions/common";
 
 import { queryShopHome } from "@/utils/queries/shop/queryShopHome";
+import ThemeConstants from "@/utils/static/constants";
 
 export async function getShopHomePage() {
-    const revalidate = 1 * 1;
+    const revalidate = ThemeConstants.revalidate;
     // Set up return object.
     const response = {
         page: null,

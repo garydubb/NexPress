@@ -1,4 +1,4 @@
-import Preloader from '@/components/themes/basic/components/preloader';
+import Preloader from '@/components/Atoms/Preloader/Preloader';
 import { getSessionCartContent } from '@/utils/Process/Cart';
 import { useShopContext } from '@/utils/context/ShopProvider';
 import { useEffect, useState } from 'react';

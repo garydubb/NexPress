@@ -2,10 +2,11 @@ import Link from '@/components/Atoms/Link';
 import { useShopContext } from '@/utils/context/ShopProvider';
 import { QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
 import CartShippingCalculator from '../../../CartShippingCalculator';
+import StaticLinks from '@/utils/static/links';
 
 const OrderSummary = () => {
   const { cart } = useShopContext();
-
+  
   if (!cart) return;
   return (
     <>
@@ -77,7 +78,7 @@ const OrderSummary = () => {
 
         <div className="mt-6 text-center">
           <Link
-            href="/shop/checkout"
+            href={StaticLinks.checkout.href}
             className="flex w-full justify-self-center rounded-md border border-transparent bg-indigo-600 py-3 px-4 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
           >
             Checkout

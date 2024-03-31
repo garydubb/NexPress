@@ -1,5 +1,6 @@
 import { queryBlogPostBySlug } from '@/utils/queries/blog/queryBlogPostBySlug';
 import processBlogPostsQuery from './processBlogPostsQuery';
+import ThemeConstants from '@/utils/static/constants';
 
 /**
  * Retrieve static props by post type.
@@ -17,8 +18,8 @@ export default async function getBlogPostsStaticProps(
   preview = false,
   previewData = null,
 ) {
-  // Set revalidate length (seconds).
-  const revalidate = 1 * 1;
+ 
+  const revalidate = ThemeConstants.revalidate;
 
   /* -- Fallback: return error if params missing. -- */
   if (!params) {
@@ -29,7 +30,7 @@ export default async function getBlogPostsStaticProps(
 
   // Set query variables.
   const id = params.slug;
-
+  
   const idType = 'SLUG';
   const { error, errorMessage, ...postData } = await processBlogPostsQuery(
     postType,
@@ -37,7 +38,7 @@ export default async function getBlogPostsStaticProps(
     { id, idType },
     preview,
   );
-
+    
   const props = {
     ...postData,
     error,

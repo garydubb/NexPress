@@ -1,5 +1,6 @@
 import queryGetProductBySlug from '@/utils/queries/shop/product/queryGetProductBySlug';
 import processProductQuery from './processProductQuery';
+import ThemeConstants from '@/utils/static/constants';
 
 /**
  * Retrieve static props by post type.
@@ -18,7 +19,7 @@ export default async function getProductTypeStaticProps(
   previewData = null,
 ) {
   // Set revalidate length (seconds).
-  const revalidate = 1 * 1;
+  const revalidate = ThemeConstants.revalidate;
 
   /* -- Fallback: return error if params missing. -- */
   if (!params) {

@@ -1,29 +1,28 @@
-import ProductPage from '@/components/themes/nexPressShop/Product';
-import { useAppContext } from '@/utils/context/AuthProvider';
-import { useShopContext } from '@/utils/context/ShopProvider';
-import Moduleproduct from '@/utils/Process/Product';
-import { useEffect } from 'react';
+import ProductPage from "@/components/themes/nexPressShop/Product";
+import { useAppContext } from "@/utils/context/AuthProvider";
+import { useShopContext } from "@/utils/context/ShopProvider";
+import Moduleproduct from "@/utils/Process/Product";
+import { useEffect } from "react";
 
-export default function ShopProductPage({ props }: any) {
-  //const allPosts = postsResult.data;
+export default function ShopProductPage(props) {
+    //const allPosts = postsResult.data;
 
-  const { setMenus, setSeo, setSettings } = useAppContext();
-  const { setProduct } = useShopContext();
-  useEffect(() => {
-    const { error, page } = props;
-    if (props && page) {
-      setMenus(page.menus);
-      setSeo(page.seo);
-      setSettings(page.settings);
-
-      setProduct(page.content);
-    }
-  }, []);
-  return <ProductPage />;
+    const { setMenus, setSeo, setSettings } = useAppContext();
+    const { setProduct } = useShopContext();
+    useEffect(() => {
+        const { error, page } = props;
+        if (props && page) {
+            setMenus(page.menus);
+            setSeo(page.seo);
+            setSettings(page.settings);
+            setProduct(page.content);
+        }
+    }, []);
+    return <ProductPage />;
 }
 
 export async function getStaticPaths() {
-  return await Moduleproduct.getProductsStaticPaths('product');
+    return await Moduleproduct.getProductsStaticPaths("product");
 }
 
 /**
@@ -37,16 +36,10 @@ export async function getStaticPaths() {
  * @return {object}                      Post props.
  */
 export async function getStaticProps({ params, preview, previewData }) {
-  // Replace the empty array with the appropriate function call
-  const props = await Moduleproduct.getProductTypeStaticProps(
-    params,
-    'product',
-    preview,
-    previewData,
-  );
-
-  return {
-    props,
-    revalidate: 1 * 1, // Set your desired revalidation time
-  };
+    return await Moduleproduct.getProductTypeStaticProps(
+        params,
+        "product",
+        preview,
+        previewData
+    );
 }

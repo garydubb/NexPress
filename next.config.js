@@ -1,5 +1,5 @@
 if (!process.env.WORDPRESS_API_URL) {
-  throw new Error(`
+    throw new Error(`
     Please provide a valid WordPress instance URL.
     Add to your environment variables WORDPRESS_API_URL.
   `);
@@ -20,12 +20,12 @@ if (!process.env.WORDPRESS_API_URL) {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+    /* config options here */
 
-  images: {
-    domains: ['tailwindui.com', 'localhost'],
-  },
-  reactStrictMode: true,
+    images: {
+        domains: ["tailwindui.com", "localhost", "0.gravatar.com",'1.gravatar.com','secure.gravatar.com',],
+    },
+    reactStrictMode: true,
 };
 
 module.exports = nextConfig;

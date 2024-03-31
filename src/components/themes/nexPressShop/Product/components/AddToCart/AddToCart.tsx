@@ -1,6 +1,6 @@
 import { getSessionCartContent } from '@/utils/Process/Cart';
 import { useShopContext } from '@/utils/context/ShopProvider';
-import { queryProductAddToCart } from '@/utils/mutate/AddToCart';
+import ModuleAddToCart from '@/utils/Process/AddToCart';
 import { useState } from 'react';
 import { v4 } from 'uuid';
 import Alert from '../../../Alert';
@@ -26,7 +26,7 @@ const AddToCart = () => {
         input: productQryInput,
       };
 
-      const { data } = await queryProductAddToCart(input);
+      const { data } = await ModuleAddToCart.queryProductAddToCart(input);
 
       if (data) {
         if (data.cartItem.key) {

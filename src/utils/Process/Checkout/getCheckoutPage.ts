@@ -1,9 +1,10 @@
 import client from '@/utils/apollo/ApolloClient';
 import getMenus from '@/utils/functions/common';
 import queryGetCheckoutPage from '@/utils/queries/shop/checkout/queryGetCheckoutPage';
+import ThemeConstants from '@/utils/static/constants';
 
 export async function getCheckoutPage() {
-  const revalidate = 1 * 1;
+  const revalidate = ThemeConstants.revalidate;
   // Set up return object.
   const response = {
     page: null,

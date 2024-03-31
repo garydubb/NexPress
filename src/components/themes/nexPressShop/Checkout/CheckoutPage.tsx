@@ -1,10 +1,10 @@
-import Container from '@/components/themes/nexPressShop/Container';
-import NexPressFooter from '@/components/themes/nexPressShop/Footer/Footer.component';
+import Container from '@/components/themes/Common/Container';
+import NexPressFooter from '@/components/themes/Common/Footer/Footer.component';
 import { getSessionCartContent } from '@/utils/Process/Cart';
 import { useShopContext } from '@/utils/context/ShopProvider';
 import { Formik } from 'formik';
 import { useEffect, useState } from 'react';
-import NexPressNavbar from '../Header/NavBar.component';
+import NexPressNavbar from '../../Common/Header/NavBar.component';
 import ShopPreloader from '../ShopPreloader';
 import checkoutSchema from './checkoutSchema';
 import { CheckoutForm, OrderSummary } from './components';

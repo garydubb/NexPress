@@ -3,9 +3,10 @@ import getMenus from "@/utils/functions/common";
 import { queryBlogPosts } from "@/utils/queries/blog/queryBlogPosts";
 
 import { queryShopHome } from "@/utils/queries/shop/queryShopHome";
+import ThemeConstants from "@/utils/static/constants";
 
 export default async function getBlogHomePage() {
-    const revalidate = 1 * 1;
+    const revalidate = ThemeConstants.revalidate;
     // Set up return object.
     const response = {
         page: null,

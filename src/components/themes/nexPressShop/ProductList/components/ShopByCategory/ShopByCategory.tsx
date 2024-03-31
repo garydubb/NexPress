@@ -12,6 +12,7 @@ export default function ShopByCategory() {
       setCategories(productCategories);
     }
   }, [content]);
+
   if (!categories) return;
   return (
     <div className="bg-white">

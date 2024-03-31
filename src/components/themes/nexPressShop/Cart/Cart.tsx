@@ -1,6 +1,6 @@
-import Container from '@/components/themes/nexPressShop/Container';
-import NexPressFooter from '@/components/themes/nexPressShop/Footer/Footer.component';
-import NexPressNavbar from '@/components/themes/nexPressShop/Header/NavBar.component';
+import Container from '@/components/themes/Common/Container';
+import NexPressFooter from '@/components/themes/Common/Footer/Footer.component';
+import NexPressNavbar from '@/components/themes/Common/Header/NavBar.component';
 import { CartContent } from './components';
 
 const CartPage = () => {

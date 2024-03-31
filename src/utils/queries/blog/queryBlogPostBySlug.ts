@@ -4,20 +4,18 @@ import queryPostFieldsFragment from './partials/queryPostFieldsFragment';
 import defaultPageData from '../settings/defaultPageData';
 
 export const queryBlogPostBySlug = gql`
+
   ${queryPostAuthorFragment}
   ${queryPostFieldsFragment}
-  query PostBySlug($slug: ID!) {
+  query PostBySlug(
+    $id: ID!
+    $idType: PostIdType = SLUG
+  ) {
     ${defaultPageData}
-    post(id: $slug, idType: SLUG) {
+    post (id: $id, idType: $idType) {
       ...PostFields
       content
     }
-    posts(first: 3, where: { orderby: { field: DATE, order: DESC } }) {
-      edges {
-        node {
-          ...PostFields
-        }
-      }
-    }
+   
   }
 `;
