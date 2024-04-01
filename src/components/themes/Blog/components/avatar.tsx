@@ -8,7 +8,7 @@ export default function Avatar({ author }: PostAuthor) {
     author?.node?.firstName && author?.node?.lastName;
   const name = isAuthorHaveFullName
     ? `${author.node.firstName} ${author.node.lastName}`
-    : author.node.name || null;
+    : author?.node?.name || null;
 
   return (
     <div className="flex items-center">

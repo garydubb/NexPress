@@ -1,9 +1,9 @@
-import client from '@/utils/apollo/ApolloClient';
-import getMenus from '@/utils/functions/common';
+import client from "@/utils/apollo/ApolloClient";
+import getMenus from "@/utils/functions/common";
 /**
  * Retrieve single post.
  *
- * @author Foamite
+ * @author garydubb
  * @param  {string}          postType  WP post type.
  * @param  {number | string} id        Post identifier.
  * @param  {object}          query     Post retrieval query.
@@ -12,55 +12,55 @@ import getMenus from '@/utils/functions/common';
  * @return {object}                    Object containing Apollo client instance and post data or error object.
  */
 export default async function processProductTypeQuery(
-  postType,
-  query,
-  variables = {},
-  preview = null,
+    postType,
+    query,
+    variables = {},
+    preview = null
 ) {
-  // Set up return object.
-  const response = {
-    page: null,
-    error: false,
-    errorMessage: null,
-    notFound: false,
-  };
-
-  // If no query is set for given post type, return error message.
-  if (!query) {
-    return {
-      page: null,
-      error: true,
-      errorMessage: `Post type \`${postType}\` is not supported.`,
-      notFound: true,
+    // Set up return object.
+    const response = {
+        page: null,
+        error: false,
+        errorMessage: null,
+        notFound: false,
     };
-  }
 
-  // Execute query.
-  response.page = await client
-    .query({ query, variables })
-    .then((res) => {
-      const { product, menus } = res.data;
+    // If no query is set for given post type, return error message.
+    if (!query) {
+        return {
+            page: null,
+            error: true,
+            errorMessage: `Post type \`${postType}\` is not supported.`,
+            notFound: true,
+        };
+    }
 
-      // Retrieve menus.
-      const defaultMenus = getMenus(menus);
+    // Execute query.
+    response.page = await client
+        .query({ query, variables })
+        .then((res) => {
+            const { product, menus } = res.data;
 
-      // Retrieve default SEO data.
-      //const defaultSeo = product?.seo;
-      const pageData = {
-        menus: defaultMenus,
-        seo: null,
-        content: product,
-        settings: null,
-        postType: 'product',
-      };
-      return pageData;
-    })
-    .catch((error) => {
-      response.error = true;
-      response.errorMessage = error.message;
-      console.log(error.message);
-      return null;
-    });
+            // Retrieve menus.
+            const defaultMenus = getMenus(menus);
 
-  return response;
+            // Retrieve default SEO data.
+            //const defaultSeo = product?.seo;
+            const pageData = {
+                menus: defaultMenus,
+                seo: null,
+                content: product,
+                settings: null,
+                postType: "product",
+            };
+            return pageData;
+        })
+        .catch((error) => {
+            response.error = true;
+            response.errorMessage = error.message;
+            console.log(error.message);
+            return null;
+        });
+
+    return response;
 }

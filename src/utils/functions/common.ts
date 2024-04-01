@@ -9,7 +9,7 @@ export function classNames(...classes) {
 /**
  * Check if post type is valid.
  *
- * @author Foamite
+ * @author garydubb
  * @param  {string}  postType WP post type.
  * @return {boolean}          Whether provided post type is valid.
  */
@@ -22,7 +22,7 @@ export const hierarchicalPostTypes = ['page'];
 /**
  * Check if post type is hierarchical.
  *
- * @author Foamite
+ * @author garydubb
  * @param  {string}  postType WP post type.
  * @return {boolean}          Whether provided post type is hierarchical.
  */

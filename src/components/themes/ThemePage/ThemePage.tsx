@@ -3,11 +3,8 @@ import NexPressFooter from "@/components/themes/Common/Footer/Footer.component";
 import NexPressNavbar from "@/components/themes/Common/Header/NavBar.component";
 import { useAppContext } from "@/utils/context/AuthProvider";
 import { useEffect, useState } from "react";
-import PostHeader from "./components/post-header";
-import PostBody from "./components/post-body";
-import SectionSeparator from "./components/section-separator";
-
-// Import the NodeByUri query here
+import PostHeader from "../Blog/components/post-header";
+import PostBody from "../Blog/components/post-body";
 
 export default function NPBlogHomePage() {
     const { content } = useAppContext();
@@ -22,7 +19,7 @@ export default function NPBlogHomePage() {
         <>
             <NexPressNavbar />
             <Container>
-                <article className="mx-auto max-w-2xl py-8 px-4 sm:py-16 sm:px-6 lg:max-w-7xl lg:px-8">
+                <article>
                     <PostHeader
                         title={data.title}
                         coverImage={data.featuredImage}

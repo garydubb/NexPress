@@ -13,7 +13,7 @@ export default function HeroPost({
   slug,
 }: any) {
   return (
-    <section>
+    <section className="mx-auto max-w-2xl py-8 px-4 sm:py-8 sm:px-6 lg:max-w-7xl lg:px-8">
       <div className="mb-8 md:mb-16">
         {coverImage && (
           <CoverImage title={title} coverImage={coverImage} slug={slug} />

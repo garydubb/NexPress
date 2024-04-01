@@ -1,6 +1,6 @@
 /* eslint-disable indent */
-import { getSessionCartContent } from '@/utils/Process/Cart';
-import { querySetCustomerShippingAddress } from '@/utils/Process/Shipping';
+import ModuleCart, { getSessionCartContent } from '@/utils/Process/Cart';
+import ModuleShipping, {   } from '@/utils/Process/Shipping';
 import { useShopContext } from '@/utils/context/ShopProvider';
 import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
@@ -46,11 +46,11 @@ const CartShippingCalculator = () => {
       },
     };
     setLoading(true);
-    const { data } = await querySetCustomerShippingAddress(input);
+    const { data } = await ModuleShipping.setShipping(input);
 
     setCustomer(data.customer);
     if (data) {
-      const { data } = await getSessionCartContent();
+      const { data } = await ModuleCart.getSessionCartContent();
       setCart(data.cart);
       setLoading(false);
     }

@@ -5,7 +5,7 @@ import ThemeConstants from '@/utils/static/constants';
 /**
  * Retrieve static props by post type.
  *
- * @author Foamite
+ * @author garydubb
  * @param  {string}  params      Post params (e.g., slug).
  * @param  {string}  postType    Post Type.
  * @param  {boolean} preview     Whether requesting preview of post.

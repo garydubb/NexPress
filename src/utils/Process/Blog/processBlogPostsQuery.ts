@@ -3,7 +3,7 @@ import getMenus from '@/utils/functions/common';
 /**
  * Retrieve single post.
  *
- * @author Foamite
+ * @author garydubb
  * @param  {string}          postType  WP post type.
  * @param  {number | string} id        Post identifier.
  * @param  {object}          query     Post retrieval query.

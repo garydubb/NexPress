@@ -3,7 +3,7 @@ import defaultPageData from "../settings/defaultPageData";
 
 export const queryPageBySlug = gql`
 
-  query PostBySlug($slug: ID!) {
+  query PageBySlug($slug: ID!) {
     ${defaultPageData}
     page(id: $slug, idType: URI) {
       date

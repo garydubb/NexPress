@@ -6,7 +6,7 @@ import { MorePosts } from '@/utils/type/posts/post';
 export default function MoreStories({ posts }: MorePosts) {
   
   return (
-    <section>
+    <section className='mx-auto max-w-2xl py-16 px-4 sm:py-8 sm:px-6 lg:max-w-7xl lg:px-8'>
       <h2 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight">
         More Stories
       </h2>

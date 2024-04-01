@@ -1,7 +1,7 @@
 /**
  * Format a flat list WP nav menu into a heirarchial list.
  *
- * @author foamite
+ * @author garydubb
  * @see https://www.wpgraphql.com/docs/menus/#hierarchical-data
  * @param  {Array}  data             The array containing menu data.
  * @param  {object} keys             Object keys.
