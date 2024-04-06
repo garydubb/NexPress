@@ -1,7 +1,22 @@
 import BlogSinglePage from "@/components/themes/Blog/BlogSinglePage";
+import { useAppContext } from "@/utils/context/AuthProvider";
 import ModuleBlog from "@/utils/Process/Blog";
+import { useEffect } from "react";
 
-export default function BlogPost() {
+export default function BlogPost(props: any) {
+    const { setMenus, setSeo, setSettings, setContent } = useAppContext();
+    useEffect(() => {
+      const { page } = props;
+  
+      if (props && page) {
+        setMenus(page.menus);
+        setSeo(page.seo);
+        setSettings(page.settings);
+        setContent(page.content);
+      }
+    }, [props]);
+
+    if (!props) return null;
     return <BlogSinglePage />;
 }
 export async function getStaticPaths() {

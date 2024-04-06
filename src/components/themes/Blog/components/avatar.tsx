@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { PostAuthor } from '@/utils/type/author/author';
 
 export default function Avatar({ author }: PostAuthor) {
+  
   const isAuthorHaveFullName =
     author?.node?.firstName && author?.node?.lastName;
   const name = isAuthorHaveFullName
@@ -14,7 +15,7 @@ export default function Avatar({ author }: PostAuthor) {
     <div className="flex items-center">
       <div className="w-12 h-12 relative mr-4">
         <Image
-          src={author.node.avatar.url}
+          src={author?.node?.avatar?.url}
           width={50}
           height={50}
           priority

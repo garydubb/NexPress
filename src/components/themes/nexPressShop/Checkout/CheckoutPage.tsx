@@ -46,7 +46,7 @@ const CheckoutPage = () => {
       setLoading(true);
 
       const { data } = await getSessionCartContent();
-
+     
       if (data) {
         setCart(data.cart);
         setCustomer(data.customer);

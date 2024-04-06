@@ -36,9 +36,10 @@ const AddToCart = () => {
           const { data } = await getSessionCartContent();
 
           if (data.cart) {
+            setLoading(false);
             setCart(data.cart);
           }
-          setLoading(false);
+          
         }
       }
     } catch (error) {

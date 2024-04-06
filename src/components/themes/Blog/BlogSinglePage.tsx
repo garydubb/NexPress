@@ -10,27 +10,15 @@ import SectionSeparator from "./components/section-separator";
 // Import the NodeByUri query here
 
 export default function NPBlogHomePage() {
-    const { content } = useAppContext();
-    const [data, setData] = useState(null);
-    useEffect(() => {
-        if (content) {
-            setData(content);
-        }
-    }, [content]);
-    if (!data) return;
+  
+  
     return (
         <>
             <NexPressNavbar />
             <Container>
                 <article className="mx-auto max-w-2xl py-8 px-4 sm:py-16 sm:px-6 lg:max-w-7xl lg:px-8">
-                    <PostHeader
-                        title={data.title}
-                        coverImage={data.featuredImage}
-                        date={data.date}
-                        author={data.author}
-                        categories=""
-                    />
-                    <PostBody content={data.content} />
+                    <PostHeader />
+                    <PostBody  /> 
                 </article>
             </Container>
             <NexPressFooter />

@@ -13,6 +13,7 @@ const BillingForm = () => {
   const { values, setFieldValue, errors, touched, getFieldProps } =
     useFormikContext();
   useEffect(() => {
+    console.log(customer);
     if (customer) {
       const { shipping } = customer;
       setCountry(shipping.country);

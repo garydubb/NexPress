@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <React.StrictMode>
       <ApolloProvider client={client}>
         <SessionContextProvider>
-          <AppContextProvider value={pageProps}>
+          <AppContextProvider >
             <ShopProvider value={null}>
               <Preloader />
               <Meta />

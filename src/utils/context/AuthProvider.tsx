@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 
 export interface AppContextProviderInterface {
     children: React.ReactNode;
-    value: any;
+   
 }
 
 interface AuthContextProps {
@@ -31,24 +31,14 @@ const AppContext = React.createContext<AuthContextProps>({
 
 const AppContextProvider: React.FC<AppContextProviderInterface> = ({
     children,
-    value,
+   
 }) => {
     const [isLoggedIn] = useState(false);
     const [menus, setMenus] = useState(null);
     const [seo, setSeo] = useState(null);
     const [settings, setSettings] = useState(null);
     const [content, setContent] = useState(null);
-
-    useEffect(() => {
-        const { page } = value;
-
-        if (value && page) {
-            setMenus(page.menus);
-            setSeo(page.seo);
-            setSettings(page.settings);
-            setContent(page.content);
-        }
-    }, [value]);
+  
     return (
         <AppContext.Provider
             value={{
