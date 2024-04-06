@@ -25,14 +25,14 @@ export default function ShopByCategory() {
 
         <div className="mt-4 flow-root">
           <div className="-my-2">
-            <div className="relative box-content h-80 overflow-x-auto py-2 xl:overflow-visible">
+            <div className="relative box-content overflow-x-auto py-2 xl:overflow-visible">
               <div className="min-w-screen-xl absolute flex space-x-8 px-4 sm:px-6 lg:px-8 xl:relative xl:grid xl:grid-cols-5 xl:gap-x-8 xl:space-x-0 xl:px-0">
                 {categories &&
                   categories.map((category) => (
                     <a
                       key={category.name}
                       href={category.href}
-                      className="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 hover:opacity-75 xl:w-auto"
+                      className="relative flex my-5 h-80 w-56 flex-col overflow-hidden rounded-lg p-6 hover:opacity-75 xl:w-auto"
                     >
                       <span aria-hidden="true" className="absolute inset-0">
                         {category.image && (
