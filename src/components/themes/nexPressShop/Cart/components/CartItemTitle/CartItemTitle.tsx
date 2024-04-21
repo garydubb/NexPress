@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 
 const CartItemTitle = ({ product }: any) => {
-  const [loading, setLoading] = useState(false);
+  
   const [title, setTitle] = useState(null);
   const [href, setHref] = useState(null);
   useEffect(() => {
     if (product) {
       const { node } = product;
       setTitle(node.name);
-      setHref(`/shop/${node.slug}`);
+      setHref(`/product/${node.slug}`);
     }
   }, [product]);
 

@@ -11,7 +11,7 @@ const ProductPage = () => {
       <NexPressNavbar />
       <Container>
         <ProductDisplay />
-        <RelatedProducts />
+        {/* <RelatedProducts /> */}
       </Container>
       <NexPressFooter />
     </div>

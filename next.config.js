@@ -1,7 +1,7 @@
-if (!process.env.WORDPRESS_API_URL) {
+if (!process.env.NEXT_PUBLIC_GRAPHQL_URL) {
     throw new Error(`
     Please provide a valid WordPress instance URL.
-    Add to your environment variables WORDPRESS_API_URL.
+    Add to your environment variables NEXT_PUBLIC_GRAPHQL_URL.
   `);
 }
 
@@ -23,7 +23,14 @@ const nextConfig = {
     /* config options here */
 
     images: {
-        domains: ["tailwindui.com", "localhost", "0.gravatar.com",'1.gravatar.com','secure.gravatar.com',],
+        domains: [
+            "tailwindui.com",
+            "localhost",
+            "0.gravatar.com",
+            "1.gravatar.com",
+            "secure.gravatar.com",
+            "dev.garydubb.com",
+        ],
     },
     reactStrictMode: true,
 };

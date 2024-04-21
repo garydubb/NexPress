@@ -1,10 +1,4 @@
-# NexPress.com
-
-This repository contains the source code for the NexPress, a web application built using Next.js, and Headless WordPress backend. This project integrates Next.js with WordPress using a headless architecture. We leverage wp-graphql to fetch data from WordPress and present it using the power and flexibility of Next.js.
-
-
-
-## Project Information
+## NexPress.com
 
 The NexPress.com is a web application that combines the power of Next.js, and Headless WordPress to provide a robust and feature-rich experience. The application leverages the benefits of server-side rendering and the flexibility of WordPress as a backend CMS to create a fast and dynamic websites.
 
@@ -26,15 +20,72 @@ WP-GraphQL is a WordPress plugin that extends the default WordPress REST API wit
 
 # Getting Started
 
-To get started with the Project Name, follow these steps:
+To get started with the NexPress, follow these steps:
 
 - Clone the repository: git clone https://github.com/garydubb/Nexpress.git
 - Install dependencies: npm install or yarn
 - Configure environment variables: Create a .env file based on the provided .env.example file and update the necessary values.
 - Start the development server: npm run dev or yarn run dev
+## Configuration
+
+### Step 1. Prepare your WordPress site
+
+First, you need a WordPress site. There are many solutions for WordPress hosting, such as [WP Engine](https://wpengine.com/) and [WordPress.com](https://wordpress.com/).
+
+Once the site is ready, you'll need to install the [WPGraphQL](https://www.wpgraphql.com/) plugin. It will add GraphQL API to your WordPress site, which we'll use to query the posts. Follow these steps to install it:
+
+- Download the [WPGraphQL repo](https://github.com/wp-graphql/wp-graphql) as a ZIP archive.
+- Inside your WordPress admin, go to **Plugins** and then click **Add New**.
+
+![Add new plugin](./docs/plugins-add-new.png)
+
+- Click the **Upload Plugin** button at the top of the page and upload the WPGraphQL plugin.
+
+![Upload new plugin](./docs/plugins-upload-new.png)
+
+- Once the plugin has been added, activate it from either the **Activate Plugin** button displayed after uploading or from the **Plugins** page.
+
+![WPGraphQL installed](./docs/plugin-installed.png)
+
+#### GraphiQL
+
+The [WPGraphQL](https://www.wpgraphql.com/) plugin also gives you access to a GraphQL IDE directly from your WordPress Admin, allowing you to inspect and play around with the GraphQL API.
+
+![WPGraphiQL page](./docs/wp-graphiql.png)
+
+### Step 2. Populate Content
+
+Inside your WordPress admin, go to **Posts** and start adding new posts:
+
+- We recommend creating at least **2 posts**
+- Use dummy data for the content
+- Pick an author from your WordPress users
+- Add a **Featured Image**. You can download one from [Unsplash](https://unsplash.com/)
+- Fill the **Excerpt** field
+
+![New post](./docs/new-post.png)
+
+When you’re done, make sure to **Publish** the posts.
+
+> **Note:** Only **published** posts and public fields will be rendered by the app unless [Preview Mode](https://nextjs.org/docs/advanced-features/preview-mode) is enabled.
 
 # Environment Variables:
 Rename .env.example to .env.local and update the variables to match your WordPress setup.
+
+NEXT_PUBLIC_GRAPHQL_URL : 
+Description: This variable specifies the GraphQL endpoint URL of the WordPress backend.
+Value: http://example.com/graphql (example value)
+Usage: This URL is used by the Next.js application to communicate with the WordPress backend via GraphQL queries and mutations.
+
+WORDPRESS_AUTH_REFRESH_TOKEN
+Description: This variable contains the refresh token used for authenticating with the WordPress backend.
+Value: abcccc (example value)
+Usage: The refresh token is utilized for authenticating requests to the WordPress backend, particularly for operations requiring authorization, such as fetching private data or performing mutations.
+
+NEXT_PUBLIC_REVALIDATE_TIME
+Description: This variable specifies the revalidation time (in seconds) for Next.js data fetching methods such as getStaticProps and getServerSideProps.
+Value: 2 (example value)
+Usage: Next.js uses this value to determine how frequently to re-fetch data from the backend. Setting a shorter revalidation time can result in more frequent data updates on the client side, while a longer revalidation time can improve performance by reducing unnecessary data fetching.
 
 # Code Formatting and Quality Tools
 
