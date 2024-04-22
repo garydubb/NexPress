@@ -9,7 +9,7 @@ const ProductList = () => {
       <NexPressNavbar />
       <Container>
         <ProductCard />
-        <ShopByCategory />
+        {/* <ShopByCategory /> */}
       </Container>
       <NexPressFooter />
     </div>
