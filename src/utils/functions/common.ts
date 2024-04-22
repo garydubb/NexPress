@@ -31,7 +31,7 @@ export function isHierarchicalPostType(postType) {
 }
 
 export default function getMenus(menus, locations = menuLocations) {
-  if (locations && !locations.length > 0) {
+  if (locations) {
     return []; // Exit if empty.
   }
 
