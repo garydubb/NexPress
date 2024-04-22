@@ -50,21 +50,15 @@ export default function SinglePage({
                       content={post.featuredImage?.node.sourceUrl}
                     />
                   </Head>
-                  <PostHeader
-                    title={post.title}
-                    coverImage={post.featuredImage}
-                    date={post.date}
-                    author={post?.author}
-                    categories={post.categories}
-                  />
-                  <PostBody content={post.content} />
+                  <PostHeader />
+                  <PostBody/>
                   <footer>
                     {post.tags.edges.length > 0 && <Tags tags={post.tags} />}
                   </footer>
                 </article>
 
                 <SectionSeparator />
-                {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+                {morePosts.length > 0 && <MoreStories />}
               </>
             )}
           </Container>
