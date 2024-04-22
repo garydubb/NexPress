@@ -20,14 +20,8 @@ export default function NPBlogHomePage() {
             <NexPressNavbar />
             <Container>
                 <article>
-                    <PostHeader
-                        title={data.title}
-                        coverImage={data.featuredImage}
-                        date={data.date}
-                        author={data.author}
-                        categories=""
-                    />
-                    <PostBody content={data.content} />
+                    <PostHeader />
+                    <PostBody />
                 </article>
             </Container>
             <NexPressFooter />
