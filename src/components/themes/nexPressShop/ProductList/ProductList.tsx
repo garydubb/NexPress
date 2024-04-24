@@ -6,12 +6,13 @@ import { ProductCard, ShopByCategory } from './components';
 const ProductList = () => {
   return (
     <div>
-      <NexPressNavbar />
+      {/* <NexPressNavbar /> */}
       <Container>
+        Hello World
         {/* <ProductCard /> */}
         {/* <ShopByCategory /> */}
       </Container>
-      <NexPressFooter />
+      {/* <NexPressFooter /> */}
     </div>
   );
 };
