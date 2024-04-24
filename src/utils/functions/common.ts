@@ -31,10 +31,7 @@ export function isHierarchicalPostType(postType) {
 }
 
 export default function getMenus(menus, locations = menuLocations) {
-  if (locations) {
-    return []; // Exit if empty.
-  }
-
+  
   // Filter returned menus by specific menu location.
   const filteredMenus = filterMenusByLocation(menus?.nodes, locations);
 

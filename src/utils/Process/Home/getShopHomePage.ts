@@ -19,7 +19,7 @@ export async function getShopHomePage() {
         })
         .then((res) => {
             const { menus, productCategories, products } = res.data;
-
+               
             // Retrieve menus.
             return {
                 menus: getMenus(menus),
