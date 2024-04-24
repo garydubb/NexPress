@@ -6,7 +6,7 @@ import { ProductCard, ShopByCategory } from './components';
 const ProductList = () => {
   return (
     <div>
-      {/* <NexPressNavbar /> */}
+      <NexPressNavbar />
       <Container>
         <ProductCard />
         <ShopByCategory />
