@@ -9,14 +9,12 @@ import '../styles/index.css';
 import '../styles/main.css';
 import Preloader from '@/components/Atoms/Preloader';
 import Meta from '@/components/themes/Common/Meta';
-import ErrorBoundary from '@/components/ErrorBoundary'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <React.StrictMode>
       <ApolloProvider client={client}>
         <SessionContextProvider>
-          <ErrorBoundary>
           <AppContextProvider >
             <ShopProvider value={null}>
               <Preloader />
@@ -24,7 +22,6 @@ function MyApp({ Component, pageProps }: AppProps) {
               <Component {...pageProps} />
             </ShopProvider>
           </AppContextProvider>
-          </ErrorBoundary>
         </SessionContextProvider>
       </ApolloProvider>
     </React.StrictMode>
