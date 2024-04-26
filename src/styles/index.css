@@ -117,3 +117,8 @@
   border-top-color: #3498db;
   animation: spin 1.5s linear infinite;
 }
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
