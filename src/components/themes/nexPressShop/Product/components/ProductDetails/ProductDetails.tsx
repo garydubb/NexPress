@@ -69,7 +69,7 @@ export default function ProductDetails() {
         <ProductPrice />
 
         {/* Reviews */}
-        <ProductRating />
+        {/* <ProductRating /> */}
 
         {/* short description */}
         <ShortDescription />
