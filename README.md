@@ -1,6 +1,6 @@
-## NexPress.com
+## NexPress
 
-The NexPress.com is a web application that combines the power of Next.js, and Headless WordPress to provide a robust and feature-rich experience. The application leverages the benefits of server-side rendering and the flexibility of WordPress as a backend CMS to create a fast and dynamic websites.
+The NexPress is a web application that combines the power of Next.js, and Headless WordPress to provide a robust and feature-rich experience. The application leverages the benefits of server-side rendering and the flexibility of WordPress as a backend CMS to create a fast and dynamic websites.
 
 ## Technologies Used
 
@@ -41,7 +41,7 @@ Once the site is ready, you'll need to install the [WPGraphQL](https://www.wpgra
 
 The [WPGraphQL](https://www.wpgraphql.com/) plugin also gives you access to a GraphQL IDE directly from your WordPress Admin, allowing you to inspect and play around with the GraphQL API.
 
-![WPGraphiQL page](./docs/wp-graphiql.png)
+![WPGraphiQL page](./docs/images/wp-graphql.png)
 
 ### Step 2. Populate Content
 
@@ -53,26 +53,34 @@ Inside your WordPress admin, go to **Posts** and start adding new posts:
 - Add a **Featured Image**. You can download one from [Unsplash](https://unsplash.com/)
 - Fill the **Excerpt** field
 
-![New post](./docs/new-post.png)
 
 When you’re done, make sure to **Publish** the posts.
 
-> **Note:** Only **published** posts and public fields will be rendered by the app unless [Preview Mode](https://nextjs.org/docs/advanced-features/preview-mode) is enabled.
+
 
 # Environment Variables:
 Rename .env.example to .env.local and update the variables to match your WordPress setup.
 
-NEXT_PUBLIC_GRAPHQL_URL : 
+## NEXT_PUBLIC_GRAPHQL_URL : 
+
 Description: This variable specifies the GraphQL endpoint URL of the WordPress backend.
+
 Value: http://example.com/graphql (example value)
+
 Usage: This URL is used by the Next.js application to communicate with the WordPress backend via GraphQL queries and mutations.
 
-WORDPRESS_AUTH_REFRESH_TOKEN
+## WORDPRESS_AUTH_REFRESH_TOKEN
+
 Description: This variable contains the refresh token used for authenticating with the WordPress backend.
-Value: abcccc (example value)
+
+Value: abcccc use this link to create token[LINK](https://api.wordpress.org/secret-key/1.1/salt/)
+
 Usage: The refresh token is utilized for authenticating requests to the WordPress backend, particularly for operations requiring authorization, such as fetching private data or performing mutations.
 
-NEXT_PUBLIC_REVALIDATE_TIME
+## NEXT_PUBLIC_REVALIDATE_TIME
+
 Description: This variable specifies the revalidation time (in seconds) for Next.js data fetching methods such as getStaticProps and getServerSideProps.
+
 Value: 2 (example value)
+
 Usage: Next.js uses this value to determine how frequently to re-fetch data from the backend. Setting a shorter revalidation time can result in more frequent data updates on the client side, while a longer revalidation time can improve performance by reducing unnecessary data fetching.
