@@ -73,7 +73,7 @@ Usage: This URL is used by the Next.js application to communicate with the WordP
 
 Description: This variable contains the refresh token used for authenticating with the WordPress backend.
 
-Value: abcccc use this link to create token[LINK](https://api.wordpress.org/secret-key/1.1/salt/)
+Value: abcccc use this link to create token[LINK] (https://api.wordpress.org/secret-key/1.1/salt/)
 
 Usage: The refresh token is utilized for authenticating requests to the WordPress backend, particularly for operations requiring authorization, such as fetching private data or performing mutations.
 
