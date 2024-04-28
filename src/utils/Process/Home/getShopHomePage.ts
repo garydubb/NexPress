@@ -18,8 +18,12 @@ export async function getShopHomePage() {
             query: queryShopHome,
         })
         .then((res) => {
-            const { menus, productCategories, products } = res.data;
-               
+            
+            const { menus, productCategories, products, generalSettings, nexpress } = res.data;
+            const settings ={
+                generalSettings,
+                nexpress
+            }
             // Retrieve menus.
             return {
                 menus: getMenus(menus),
@@ -28,7 +32,7 @@ export async function getShopHomePage() {
                     productCategories: productCategories?.nodes || null,
                     products: products?.nodes || null,
                 },
-                settings: null,
+                settings: settings,
                 postType: "page",
             };
         })

@@ -30,8 +30,7 @@ const AppContext = React.createContext<AuthContextProps>({
 });
 
 const AppContextProvider: React.FC<AppContextProviderInterface> = ({
-    children,
-   
+    children
 }) => {
     const [isLoggedIn] = useState(false);
     const [menus, setMenus] = useState(null);
