@@ -10,7 +10,7 @@ import formatHeirarchialMenu from './formatHeirarchialMenu';
  */
 export default function filterMenusByLocation(menus, locations) {
   const data = {};
-
+  
   // Loop each menu location.
   locations.forEach((location) => {
     // Convert dashes to underscores.
