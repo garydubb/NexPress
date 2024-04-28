@@ -73,14 +73,6 @@ Usage: This URL is used by the Next.js application to communicate with the WordP
 
 Description: This variable contains the refresh token used for authenticating with the WordPress backend.
 
-Value: abcccc use this link to create token[LINK](https://api.wordpress.org/secret-key/1.1/salt/)
+Value: abcccc use this link to create token[LINK] (https://api.wordpress.org/secret-key/1.1/salt/)
 
 Usage: The refresh token is utilized for authenticating requests to the WordPress backend, particularly for operations requiring authorization, such as fetching private data or performing mutations.
-
-## NEXT_PUBLIC_REVALIDATE_TIME
-
-Description: This variable specifies the revalidation time (in seconds) for Next.js data fetching methods such as getStaticProps and getServerSideProps.
-
-Value: 2 (example value)
-
-Usage: Next.js uses this value to determine how frequently to re-fetch data from the backend. Setting a shorter revalidation time can result in more frequent data updates on the client side, while a longer revalidation time can improve performance by reducing unnecessary data fetching.
